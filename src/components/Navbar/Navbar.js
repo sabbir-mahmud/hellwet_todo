@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import useUser from "../../hooks/useUser";
 
 const Navbar = () => {
@@ -8,18 +7,15 @@ const Navbar = () => {
     <div className="bg-primary">
       <div className="navbar container mx-auto">
         <div className="flex-1">
-          <Link
-            to="/"
-            className="btn btn-ghost normal-case text-secondary text-xl"
-          >
+          <p className="btn btn-ghost normal-case text-base-100 text-xl">
             HellWet ToDo Application
-          </Link>
+          </p>
         </div>
         <div className="flex-none gap-2">
           <div className="dropdown dropdown-end">
             <button
               onClick={() => handleLogout()}
-              className="btn btn-ghost text-secondary"
+              className="btn btn-ghost text-base-100"
             >
               Logout
             </button>
