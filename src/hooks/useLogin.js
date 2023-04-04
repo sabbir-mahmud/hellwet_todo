@@ -1,5 +1,5 @@
 import { signInWithEmailAndPassword } from "firebase/auth";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import auth from "../firebase.init";
 import generateToken from "./useJwt";
@@ -7,10 +7,9 @@ import useUser from "./useUser";
 
 const useLogin = () => {
   const { setUser, setLoading, setError, handleLogout } = useUser();
-  const location = useLocation();
   const navigate = useNavigate();
 
-  const from = location.state?.from?.pathname || "/";
+  const from = "/";
 
   const handleLogin = (e) => {
     e.preventDefault();
