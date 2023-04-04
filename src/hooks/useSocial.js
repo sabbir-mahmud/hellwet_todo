@@ -23,7 +23,7 @@ const useSocial = () => {
         toast.info("You are logged in!");
         setLoading(false);
         setError(null);
-        navigate(from, { replace: true });
+        navigate("/");
       })
       .catch((error) => console.error(error));
   };

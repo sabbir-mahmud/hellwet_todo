@@ -4,13 +4,12 @@ import useUser from "../../hooks/useUser";
 function RequireUser({ children }) {
   const { user, loading } = useUser();
   const location = useLocation();
-  const token = localStorage.getItem("accessToken");
 
   if (loading) {
     return;
   }
 
-  if (!user.uid || !token) {
+  if (!user.uid) {
     return <Navigate to="/login" state={{ from: location }} replace />;
   }
 
