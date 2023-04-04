@@ -1,8 +1,4 @@
-import {
-  createUserWithEmailAndPassword,
-  sendEmailVerification,
-  updateProfile,
-} from "firebase/auth";
+import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import auth from "../firebase.init";
@@ -23,13 +19,6 @@ const useRegister = () => {
     })
       .then(() => {})
       .catch((error) => {});
-  };
-
-  // verify email
-  const verifyEmail = () => {
-    sendEmailVerification(auth.currentUser).then(() => {
-      toast.info("Email sent");
-    });
   };
 
   // handle sign up
@@ -57,7 +46,6 @@ const useRegister = () => {
         setUser(user);
         // uncomment this line if you want to use jwt
         generateToken(email);
-        verifyEmail();
         navigate(from);
       })
       .catch((error) => {

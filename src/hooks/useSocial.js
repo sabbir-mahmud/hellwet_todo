@@ -1,9 +1,4 @@
-import {
-  FacebookAuthProvider,
-  GithubAuthProvider,
-  GoogleAuthProvider,
-  signInWithPopup,
-} from "firebase/auth";
+import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import auth from "../firebase.init";
@@ -22,6 +17,7 @@ const useSocial = () => {
     signInWithPopup(auth, googleProvider)
       .then((result) => {
         setUser(result.user);
+        console.log(from);
         const email = result.user.email;
         generateToken(email);
         toast.info("You are logged in!");
@@ -32,36 +28,7 @@ const useSocial = () => {
       .catch((error) => console.error(error));
   };
 
-  const handleFacebookLogin = () => {
-    const facebookProvider = new FacebookAuthProvider();
-    signInWithPopup(auth, facebookProvider)
-      .then((result) => {
-        setUser(result.user);
-        const email = result.user.email;
-        generateToken(email);
-        toast.info("You are logged in!");
-        setLoading(false);
-        setError(null);
-        navigate(from, { replace: true });
-      })
-      .catch((error) => console.error(error));
-  };
-
-  // logIn with github
-  const handleGithubLogin = () => {
-    const githubProvider = new GithubAuthProvider();
-    signInWithPopup(auth, githubProvider)
-      .then((result) => {
-        const email = result.user.email;
-        generateToken(email);
-        setUser(result.user);
-        setError(null);
-        navigate(from, { replace: true });
-      })
-      .catch((error) => console.error(error));
-  };
-
-  return { handleFacebookLogin, handleGoogleSignIn, handleGithubLogin };
+  return { handleGoogleSignIn };
 };
 
 export default useSocial;

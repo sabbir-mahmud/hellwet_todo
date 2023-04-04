@@ -6,8 +6,7 @@ import useSocial from "../../hooks/useSocial";
 
 const Login = () => {
   const handleLogin = useLogin();
-  const { handleFacebookLogin, handleGoogleSignIn, handleGithubLogin } =
-    useSocial();
+  const { handleGoogleSignIn } = useSocial();
   return (
     <div className="container mx-auto mt-14 mb-24">
       <Helmet>
@@ -60,28 +59,14 @@ const Login = () => {
                   value="login"
                 />
               </div>
+              <button
+                className="btn btn-primary my-2"
+                onClick={handleGoogleSignIn}
+              >
+                Google
+              </button>
             </div>
           </form>
-          <div className="flex items-center justify-center mb-5 ">
-            <button
-              className="btn btn-primary lg:mx-2 my-2"
-              onClick={handleFacebookLogin}
-            >
-              Facebook
-            </button>
-            <button
-              className="btn btn-primary mx-1 lg:mx-2 my-2"
-              onClick={handleGoogleSignIn}
-            >
-              Google
-            </button>
-            <button
-              className="btn btn-primary lg:mx-2 my-2"
-              onClick={handleGithubLogin}
-            >
-              Github
-            </button>
-          </div>
         </div>
       </div>
     </div>
