@@ -1,5 +1,5 @@
 const generateToken = async (email) => {
-  const url = `https://hellwetserver.sabbirmahmud.com/api/auth/`;
+  const url = `http://localhost:5000/api/auth/`;
   fetch(url, {
     method: "PUT",
     headers: {
@@ -9,9 +9,8 @@ const generateToken = async (email) => {
   })
     .then((res) => res.json())
     .then((data) => {
-      console.log(data);
-      const token = data.accessToken;
-      localStorage.setItem("accessToken", token);
+      localStorage.setItem("accessToken", data.accessToken);
+      localStorage.setItem("refreshToken", data.refreshToken);
     });
 };
 

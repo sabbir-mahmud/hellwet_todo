@@ -8,7 +8,7 @@ const Navbar = () => {
       <div className="navbar container mx-auto">
         <div className="flex-1">
           <p className="btn btn-ghost normal-case text-base-100 text-xl">
-            HellWet ToDo Application
+            ToDo Application
           </p>
         </div>
         <div className="flex-none gap-2">

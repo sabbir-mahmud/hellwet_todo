@@ -26,6 +26,7 @@ const useUser = () => {
 
   const handleLogout = () => {
     localStorage.removeItem("accessToken");
+    localStorage.removeItem("refreshToken");
     auth.signOut();
     navigate("/login");
     setUser({});
