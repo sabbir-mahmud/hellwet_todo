@@ -21,17 +21,17 @@ const DeleteModal = ({ id, setId }) => {
           <div className="modal-action">
             <label
               htmlFor="delete-modal"
-              onClick={() => setId(null)}
-              className="btn"
-            >
-              no
-            </label>
-            <label
-              htmlFor="delete-modal"
               onClick={() => handleDelete()}
               className="btn"
             >
               yes
+            </label>
+            <label
+              htmlFor="delete-modal"
+              onClick={() => setId(null)}
+              className="btn"
+            >
+              no
             </label>
           </div>
         </div>

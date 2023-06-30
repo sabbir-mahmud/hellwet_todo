@@ -10,14 +10,14 @@ const Register = () => {
       <Helmet>
         <title>Register</title>
       </Helmet>
-      <div className="shadow-md rounded-lg py-14">
-        <div className="title">
-          <h3 className="text-center text-4xl font-bold text-primary  mb-14">
-            Create a new account!
-          </h3>
-        </div>
+      <div className="rounded-lg py-14">
         <form onSubmit={handleSignUp}>
           <div className="w-3/4 mx-auto card flex-shrink-0 max-w-sm shadow-2xl bg-base-100">
+            <div className="title">
+              <h3 className="text-center pt-5 text-4xl font-bold text-primary">
+                <span className="">Create a new </span> account!
+              </h3>
+            </div>
             <div className="card-body">
               <div className="form-control">
                 <label className="label">

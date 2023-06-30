@@ -8,6 +8,7 @@ import Register from "./components/Auth/Register";
 import RequireUser from "./components/Auth/RequireAuth";
 import Home from "./components/Home/Home";
 import Navbar from "./components/Navbar/Navbar";
+import Profile from "./components/Profile/Profile";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/profile" element={<Profile />} />
       </Routes>
       <ToastContainer />
     </section>
