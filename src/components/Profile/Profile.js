@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { useGetProfileQuery } from "../../app/endpoints/profileEndpoints";
 import useUser from "../../hooks/useUser";
 
@@ -6,6 +7,7 @@ const Profile = () => {
   const { user, loading } = useUser();
   const [img, setImg] = useState(null);
   const { data: profile, isLoading } = useGetProfileQuery(user?.email);
+  const navigate = useNavigate();
 
   useEffect(() => {
     if (!img) {
@@ -19,7 +21,6 @@ const Profile = () => {
     return;
   }
 
-  console.log(profile);
   return (
     <div>
       <link
@@ -88,6 +89,15 @@ const Profile = () => {
                       >
                         Connect
                       </a>
+                      <button
+                        onClick={() =>
+                          navigate(`/profile/update/${profile[0]?.email}`)
+                        }
+                        className="bg-pink-500 active:bg-pink-600 uppercase text-white font-bold hover:shadow-md shadow text-xs px-4 py-2 rounded outline-none focus:outline-none sm:mr-2 mb-1 ease-linear transition-all duration-150"
+                        type="button"
+                      >
+                        Edit
+                      </button>
                     </div>
                   </div>
                   <div className="w-full lg:w-4/12 px-4 lg:order-1">

@@ -9,6 +9,7 @@ import RequireUser from "./components/Auth/RequireAuth";
 import Home from "./components/Home/Home";
 import Navbar from "./components/Navbar/Navbar";
 import Profile from "./components/Profile/Profile";
+import UpdateProfile from "./components/Profile/UpdateProfile";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/profile/update/:email" element={<UpdateProfile />} />
       </Routes>
       <ToastContainer />
     </section>
