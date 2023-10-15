@@ -1,6 +1,6 @@
 # To-Do Application with React, Redux, and Firebase
 
-In this tutorial, we will walk you through the process of creating a feature-rich To-Do application using a stack of technologies including React.js, Redux.js, Tailwind CSS, daisyui, Firebase, and react-toastify. This application will allow users to manage their tasks, set due dates, and ensure secure authentication using JWT and email/password or Google login.
+To-Do application using a stack of technologies including React.js, Redux.js, Tailwind CSS, daisyui, Firebase, and react-toastify. This application will allow users to manage their tasks, set due dates, and ensure secure authentication using JWT and email/password or Google login.
 
 ## Technologies Used
 - **React.js**: A popular JavaScript library for building user interfaces.
